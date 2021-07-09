@@ -1,0 +1,257 @@
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+}
+#video_Box {
+	display: flex;
+	justify-content: center;
+}
+
+video {
+	height: 337px;
+    width: 570px;
+	object-fit: cover;
+}
+
+.main {
+	height: 100vh;
+	display: flex;
+}
+
+.mainLeft {
+	background: rgba(218, 216, 216, 0.809);
+	flex: 0.9;
+	display: flex;
+	flex-direction: column;
+}
+
+.style_Videos {
+	flex-grow: 1;
+	background-color: #222222ad;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.taskBar {
+	padding: 3px 5px 0px 5px;
+	display: flex;
+	background-color: #212529;
+	color: #a8a8a8;
+	justify-content: space-between;
+}
+
+.taskBar_button_styling {
+	display: flex;
+}
+
+.taskBar_buttons {
+	letter-spacing: 0.3px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 4px 22px;
+	min-width: 80px;
+	cursor: pointer;
+	font-size: 12px;
+	font-weight: 500;
+}
+
+.taskBar_buttons svg {
+	font-size: 19px;
+	margin-bottom: 4px;
+}
+
+.taskBar_buttons:hover {
+	background-color: #2e2e2e;
+	border-radius: 5px;
+	color: #d5d5d5;
+}
+
+.button_end_call {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 4px 22px;
+	font-size: 12px;
+}
+
+.end_call {
+	font-weight: 600;
+	cursor: pointer;
+	padding: 4px 22px;
+	background-color: #b72525;
+	color: #fff;
+	border-radius: 5px;
+}
+
+.unmute,
+.stop {
+	color: #cc3b33;
+}
+
+.mainRight {
+	padding: 22px 18px;
+	flex: 0.2;
+	display: flex;
+	flex-direction: column;
+	background-color: #ffffff;
+	border-left: 1px solid #2d3d42;
+}
+
+.mainHeader {
+	text-align: center;
+}
+
+.mainHeader h6 {
+	font-weight: 700;
+	color: #4a4a4a;
+	font-size: 13px;
+}
+
+.Chat_Box {
+	flex-grow: 1;
+	overflow-y: auto;
+}
+
+.remove_bullets {
+	list-style: none;
+}
+
+.message {
+	font-size: 13px;
+	display: block;
+}
+
+.messageSendingTo svg {
+	font-size: 10px;
+	color: #000;
+}
+
+.messageHeader {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 10px;
+	font-size: 11px;
+	color: #8086ac;
+}
+
+
+.Message_Container {
+	display: flex;
+}
+
+.Message_Container  input {
+	flex-grow: 1;
+	background-color: transparent;
+	border: none;
+	font-size: 13px;
+	outline: 0;
+}
+/* nav */
+.style_drop
+{
+    font-family: 'RocknRoll One', sans-serif;
+}
+.style_nav_buttons
+{
+    font-family: 'Roboto Slab', serif;
+
+}
+.nav_main
+{
+    font-family: 'Akaya Kanadaka', cursive;
+}
+/* //footer */
+footer {
+	background-color: #00334e;
+	text-align: left;
+  }
+  
+  .site-footer
+  {
+	background-color: #222831;
+	padding:45px 0 20px;
+	font-size:15px;
+	line-height:24px;
+	color:#737373;
+  }
+  
+  .site-footer hr
+  {
+	border-top-color:#bbb;
+	opacity:0.5
+  }
+  .site-footer hr.small
+  {
+	margin:20px 0
+  }
+  .site-footer h6
+  {
+	color:#fff;
+	font-size:16px;
+	text-transform:uppercase;
+	margin-top:5px;
+	letter-spacing:2px
+  }
+  .site-footer a
+  {
+	color:#737373;
+	text-decoration: none;
+  }
+  .site-footer a:hover
+  {
+	color:#3366cc;
+	text-decoration:none;
+  }
+  .footer-links
+  {
+	padding-left:0;
+	list-style:none
+  }
+  .footer-links li
+  {
+	display:block
+  }
+  .footer-links a
+  {
+	color:#737373
+  }
+  .footer-links a:active,.footer-links a:focus,.footer-links a:hover
+  {
+	color:#3366cc;
+	text-decoration:none;
+  }
+  .footer-links.inline li
+  {
+	display:inline-block
+  }
+  .site-footer .social-icons
+  {
+	text-align:right
+  }
+  .site-footer .social-icons a
+  {
+	width:40px;
+	height:40px;
+	line-height:40px;
+	margin-left:6px;
+	margin-right:0;
+	border-radius:100%;
+	background-color:#33353d
+  }
+  .copyright-text
+  {
+	margin:0
+  }
+  .text1
+  {
+	  font-family: 'Ubuntu', sans-serif;
+  }
+  .text2
+  {
+	  font-family: 'Staatliches', cursive;
+  }
