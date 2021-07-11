@@ -56,10 +56,10 @@ navigator.mediaDevices
 			</span>
 
 			${new Date().toLocaleString('en-US', {
-				hour: 'numeric',
-				minute: 'numeric',
-				hour12: true,
-			})}
+					hour: 'numeric',
+					minute: 'numeric',
+					hour12: true,
+				})}
 		</span>
 
 		<span class="message" style ="color: #212529">${message}</span>
