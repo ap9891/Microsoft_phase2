@@ -1,111 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=RocknRoll+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-    <title>Video Call</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="/socket.io/socket.io.js"></script>
-    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>      
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    <script>
-      const ROOM_ID = '<%= roomId %>'
-    </script>
+  <title>Video Call</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"
+    integrity="sha256-KzZiKy0DWYsnwMF+X1DvQngQ2/FxF7MF3Ff72XcpuPs=" crossorigin="anonymous"></script>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+  <script>
+    const ROOM_ID = '<%= roomId %>'
+  </script>
 </head>
+
 <body>
   <!-- this section contains the nav bar -->
   <section>
     <nav class="navbar bg-dark  navbar-expand-lg navbar-dark " style="background-color: #000000;">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="#">
-                <img src="https://www.clipartmax.com/png/middle/62-629964_video-call-free-icon-video-call-flat-icon.png"
-                    alt="" width="70" height="45">
-            </a>
-            <a class="navbar-brand nav_main" href="https://en.wikipedia.org/wiki/Videotelephony"
-                target="_blank">A great destination to serve your need</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="https://www.clipartmax.com/png/middle/62-629964_video-call-free-icon-video-call-flat-icon.png"
+            alt="" width="70" height="45">
+        </a>
+        <a class="navbar-brand nav_main" href="https://en.wikipedia.org/wiki/Videotelephony" target="_blank">A great
+          destination to serve your need</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+            <button type="button" class="btn  style_nav_buttons button" data-bs-toggle="modal"
+              data-bs-target="#exampleModal" style="color:whitesmoke">
+              INSTRUCTIONS
             </button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              aria-hidden="true">
+              <div class="modal-dialog modal-dialog-centered">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h5 class="modal-title style_nav_buttons" id="exampleModalLabel"><strong> Points to keep in
+                        mind</strong></h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                  </div>
+                  <div class="modal-body style_nav_buttons">
 
-                    <button type="button" class="btn  style_nav_buttons button" data-bs-toggle="modal"
-                        data-bs-target="#exampleModal" style="color:whitesmoke">
-                        INSTRUCTIONS
-                    </button>
-                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                        aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <h5 class="modal-title style_nav_buttons" id="exampleModalLabel"><strong> Points to keep in
-                                        mind</strong></h5>
-                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                        aria-label="Close"></button>
-                                </div>
-                                <div class="modal-body style_nav_buttons">
-
-                                    1. Click on the Mute button for muting/unmuting 
-                                    <br>
-                                    2. Click on the Stop Video button for turning camera on/off
-                                    <br>
-                                    3. Click on the end call button for ending the call
-                                    <br>
-                                    4. Feel free to type messages in Chat Box
-                                    <br>
-                                    <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Happy calling</strong>
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button style_nav_buttons" class="btn btn-secondary"
-                                        data-bs-dismiss="modal">OK</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </ul>
-                <div class="dropdown style_drop">
-                    <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
-                        data-bs-toggle="dropdown" aria-expanded="false" >
-                        Video Call Benefits
-                    </a>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-                    1.Easy communication
+                    1. Click on the Mute button for muting/unmuting
                     <br>
-                    2. Better relationships 
+                    2. Click on the Stop Video button for turning camera on/off
                     <br>
-                    3. Saves money 
+                    3. Click on the end call button for ending the call
                     <br>
-                    4. Saves time
+                    4. Feel free to type messages in Chat Box
                     <br>
-                    5. Easy collaboration 
-                    <br>
-                    <br>
-                    <li><a class="dropdown-item" href="https://www.microsoft.com/en-us/microsoft-365/business-insights-ideas/resources/10-reasons-to-use-video-conferencing"
-                        target="_blank">Check it yourself</a></li>
-                    </ul>
+                    <strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                      &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Happy calling</strong>
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button style_nav_buttons" class="btn btn-secondary"
+                      data-bs-dismiss="modal">OK</button>
+                  </div>
                 </div>
+              </div>
             </div>
+          </ul>
+          <div class="dropdown style_drop">
+            <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink"
+              data-bs-toggle="dropdown" aria-expanded="false">
+              Video Call Benefits
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+              1.Easy communication
+              <br>
+              2. Better relationships
+              <br>
+              3. Saves money
+              <br>
+              4. Saves time
+              <br>
+              5. Easy collaboration
+              <br>
+              <br>
+              <li><a class="dropdown-item"
+                  href="https://www.microsoft.com/en-us/microsoft-365/business-insights-ideas/resources/10-reasons-to-use-video-conferencing"
+                  target="_blank">Check it yourself</a></li>
+            </ul>
+          </div>
         </div>
+      </div>
     </nav>
-</section>
-<!-- this contains the extra features(mut/unmute, camera on/off, end call) nad the video grid -->
+  </section>
+  <!-- this contains the extra features(mut/unmute, camera on/off, end call) nad the video grid -->
   <div class="main">
     <div class="mainLeft">
       <div class="style_Videos">
@@ -129,9 +138,9 @@
 
         <div class="taskBar_button_styling">
           <div class="button_end_call">
-             <a href="./thankyou.html"><span class="end_call" style="text-decoration: #b72525;">End Call</span></a>
+            <a href="./thankyou.html"><span class="end_call" style="text-decoration: #b72525;">End Call</span></a>
           </div>
-       </div>
+        </div>
 
       </div>
 
@@ -143,190 +152,201 @@
       <div class="Chat_Box">
         <ul class="remove_bullets">
         </ul>
-     </div>
-     <div class="Message_Container ">
-        <input id="chatMessage" type="text" placeholder="Type message here...">
-     </div>
-    </div>
-</div>
-<hr>
-<br>
-<!-- this section contains the benefits of video call -->
-<!-- the sliding images -->
-<h1 style="text-align: center; font-style: italic; text-shadow: #1b6ca8;color: #427ef7;"><strong>Why Video Call?</strong> </h1>
-<br>
-<section id="home" >
-  <div class="container">    
-      <div class="row"> 
-          <div class="col-md-6 offset-md-3">
-          </div>  
-
-          <div id="carouselExampleCaptions" class="carousel slide col-md-6 offset-md-3 " data-bs-ride="carousel">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <img src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Easy Communication</h5>
-                    <p>Connect easily with teammates.</p>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <img src="https://images.pexels.com/photos/4099099/pexels-photo-4099099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block">
-                    <h5>Better Relationships</h5>
-                    <p>No matter where you are, you can easily connect with family and friends.</p>
-                  </div>
-                </div>
-                <div class="carousel-item ">
-                  <img src="https://images.theconversation.com/files/332773/original/file-20200505-83775-1wo5imz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip" class="d-block w-100" alt="...">
-                  <div class="carousel-caption d-none d-md-block" style="color: rgb(255, 255, 255);">
-                    <h5>Easy Collaboration</h5>
-                    <p>Work becomes easy with hassle free collaboration.</p>
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
-            </div>
-          <div class="col-sm-8 offset-sm-2 main-text">
-              <br>
-              </div>   
-          </div> 
-      
-      
       </div>
-  </div> 
-
-</section>
-<br> <br><br>
-<!-- the placards -->
-<section id="work" style="background-color: #a3cbe9;">
-    <div class="container">
-        <br><br>
-        <h1 class ="text1" style = "text-align: center;">The Magic of Video Call</h1><br>
-        <div class="row ">
-            <div class="col-md-4 col-sm-12">
-                <div class="card" style="width: 18rem; border: 6px solid #1b6ca8">
-                    <div class="card-body ">
-                    <h5 class="card-title text2" style="text-align: center;">Chat with Family</h5>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <img class="card-img-bottom" src="https://image.freepik.com/free-vector/video-conferencing-concept-landing-page_52683-11235.jpg" height="190px" >
-                        </div>
-                    </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="card" style="width: 18rem; border: 6px solid #1b6ca8">
-                    <div class="card-body">
-                    <h5 class="card-title text2" style="text-align: center;">Chat with Friends</h5>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <img class="card-img-bottom" src="https://cdn.substack.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fc36b6882-7771-4663-870e-2db316c98747_1396x858.png"height="190px" >
-                        </div>
-                    </div>
-                    </div>
-                </div>      
-            </div>
-            <div class="col-md-4 col-sm-12">
-                <div class="card" style="width: 18rem; border: 6px solid #1b6ca8">
-                    <div class="card-body">
-                    <h5 class="card-title text2" style="text-align: center;">Easy office meets</h5>
-                    <div class="row">
-                        <div class="col-sm-12">
-                            <img class="card-img-bottom" src="https://image.freepik.com/free-vector/video-conferencing-concept-landing-page_52683-12189.jpg" height="190px">
-                        </div>
-                    </div>
-                    </div>
-                </div>      
-            </div>              
-        </div>
-        <br><br>
+      <div class="Message_Container ">
+        <input id="chatMessage" type="text" placeholder="Type message here...">
+      </div>
     </div>
-</section>
+  </div>
+  <hr>
+  <br>
+  <!-- this section contains the benefits of video call -->
+  <!-- the sliding images -->
+  <h1 style="text-align: center; font-style: italic; text-shadow: #1b6ca8;color: #427ef7;"><strong>Why Video
+      Call?</strong> </h1>
+  <br>
+  <section id="home">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+        </div>
 
-<br> <br>
-    <!-- feedback details -->
-<section id="help" class="container shadow p-5" >
-  <h2 class="nav-font feed" style="color:#1b6ca8; text-align : center"><b>Feedback Details</b ></h2>
+        <div id="carouselExampleCaptions" class="carousel slide col-md-6 offset-md-3 " data-bs-ride="carousel">
+          <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+              aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+              aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2"
+              aria-label="Slide 3"></button>
+          </div>
+          <div class="carousel-inner">
+            <div class="carousel-item active">
+              <img
+                src="https://images.pexels.com/photos/4226140/pexels-photo-4226140.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Easy Communication</h5>
+                <p>Connect easily with teammates.</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img
+                src="https://images.pexels.com/photos/4099099/pexels-photo-4099099.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block">
+                <h5>Better Relationships</h5>
+                <p>No matter where you are, you can easily connect with family and friends.</p>
+              </div>
+            </div>
+            <div class="carousel-item ">
+              <img
+                src="https://images.theconversation.com/files/332773/original/file-20200505-83775-1wo5imz.jpg?ixlib=rb-1.1.0&q=45&auto=format&w=496&fit=clip"
+                class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block" style="color: rgb(255, 255, 255);">
+                <h5>Easy Collaboration</h5>
+                <p>Work becomes easy with hassle free collaboration.</p>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions"
+            data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+        <div class="col-sm-8 offset-sm-2 main-text">
+          <br>
+        </div>
+      </div>
+
+
+    </div>
+    </div>
+
+  </section>
+  <br> <br><br>
+  <!-- the placards -->
+  <section id="work" style="background-color: #958af24d;">
+    <div class="container">
+      <br><br>
+      <h1 class="text1" style="text-align: center;">The Magic of Video Call</h1><br>
+      <div class="row ">
+        <div class="col-md-4 col-sm-12">
+          <div class="card" style="width: 18rem; border: 6px solid #3d4ad1">
+            <div class="card-body ">
+              <h5 class="card-title text2" style="text-align: center;">Chat with Family</h5>
+              <div class="row">
+                <div class="col-sm-12">
+                  <img class="card-img-bottom"
+                    src="https://image.freepik.com/free-vector/video-conferencing-concept-landing-page_52683-11235.jpg"
+                    height="190px">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="card" style="width: 18rem; border: 6px solid #3d4ad1">
+            <div class="card-body">
+              <h5 class="card-title text2" style="text-align: center;">Chat with Friends</h5>
+              <div class="row">
+                <div class="col-sm-12">
+                  <img class="card-img-bottom"
+                    src="https://cdn.substack.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fbucketeer-e05bbc84-baa3-437e-9518-adb32be77984.s3.amazonaws.com%2Fpublic%2Fimages%2Fc36b6882-7771-4663-870e-2db316c98747_1396x858.png"
+                    height="190px">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 col-sm-12">
+          <div class="card" style="width: 18rem; border: 6px solid #3d4ad1">
+            <div class="card-body">
+              <h5 class="card-title text2" style="text-align: center;">Easy office meets</h5>
+              <div class="row">
+                <div class="col-sm-12">
+                  <img class="card-img-bottom"
+                    src="https://image.freepik.com/free-vector/video-conferencing-concept-landing-page_52683-12189.jpg"
+                    height="190px">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <br><br>
+    </div>
+  </section>
 
   <br> <br>
+  <!-- feedback details -->
+  <section id="help" class="container shadow p-5">
+    <h2 class="nav-font feed" style="color:#1b6ca8; text-align : center"><b>Feedback Details</b></h2>
 
-  <div class="container">
+    <br> <br>
 
-    <div class="row ">
-      <div class="col-lg-4 ">
+    <div class="container">
+
+      <div class="row ">
+        <div class="col-lg-4 ">
 
 
-        <div class="card " style="width: 18rem; border: 3px solid #1b6ca8">
+          <div class="card " style="width: 18rem; border: 3px solid #1b6ca8">
 
-          <div class="card-body">
-            <h5 class="card-title" style="text-align: center;">Feedback Number</h5>
-            <h6 class="text-center"><span><a href="tel:+91-11-23978046">+91-11-23978046</a></span></h6>
-            </h2>
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center;">Feedback Number</h5>
+              <h6 class="text-center"><span><a href="tel:+91-11-23978046">+91-11-23978046</a></span></h6>
+              </h2>
+            </div>
+          </div>
+
+
+        </div>
+        <div class="col-lg-4">
+
+          <div class="card" style="width: 18rem; border: 3px solid #1b6ca8">
+
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center;">Feedback E-mail</h5>
+              <h6 class="text-center"><span><a href="mailto:ncov2019@gov.in">makeacall@ap.in</a></span></h6>
+              </h2>
+            </div>
           </div>
         </div>
 
+        <div class="col-lg-4 ">
 
-      </div>
-      <div class="col-lg-4">
+          <div class="card" style="width: 18rem; border: 3px solid #1b6ca8">
 
-        <div class="card" style="width: 18rem; border: 3px solid #1b6ca8">
-
-          <div class="card-body">
-            <h5 class="card-title" style ="text-align: center;">Feedback E-mail</h5>
-            <h6 class="text-center"><span><a href="mailto:ncov2019@gov.in">makeacall@ap.in</a></span></h6>
-            </h2>
+            <div class="card-body">
+              <h5 class="card-title" style="text-align: center;">Feedback Number</h5>
+              <h6 class="text-center"><span>1111</span></h6>
+              </h2>
+            </div>
           </div>
+
         </div>
       </div>
-
-      <div class="col-lg-4 ">
-
-        <div class="card" style="width: 18rem; border: 3px solid #1b6ca8">
-
-          <div class="card-body">
-            <h5 class="card-title" style = "text-align: center;">Feedback Number</h5>
-            <h6 class="text-center"><span>1111</span></h6>
-            </h2>
-          </div>
-        </div>
-
-      </div>
-    </div>   
-</section>
-<br><br>
-<!-- the footer -->
-<footer class="site-footer" >
+  </section>
+  <br><br>
+  <!-- the footer -->
+  <footer class="site-footer">
     <div class="container ">
       <div class="row">
-        
+
 
         <div class="col-xs-6 col-md-3 offset-md-2">
-          <h6>Quick Links</h6>
+          <h6>QUICK LINKS</h6>
           <ul class="footer-links">
             <li><a href="#">Back to Video Call</a></li>
           </ul>
         </div>
-        <div class="col-sm-12 col-md-6">
-            <!-- <h6>About</h6> -->
-            <img src="logo-footer.png" alt="" class="logo-footer">      </div>
-
-          <div class="col-xs-6 col-md-3">
-
-          </div>
       </div>
       <hr>
     </div>
@@ -339,8 +359,7 @@
   </footer>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
-        crossorigin="anonymous"></script>
+  integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
 <script src="js/main.js"></script>
 
 </html>
