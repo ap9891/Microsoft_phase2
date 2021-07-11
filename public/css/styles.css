@@ -15,7 +15,7 @@ video {
 }
 
 .main {
-	height: 100vh;
+	height: 90vh;
 	display: flex;
 }
 
@@ -182,8 +182,8 @@ footer {
   
   .site-footer hr
   {
-	border-top-color:#bbb;
-	opacity:0.5
+	border-top-color:rgb(255, 255, 255);
+	opacity:0.7;
   }
   .site-footer hr.small
   {
@@ -193,7 +193,6 @@ footer {
   {
 	color:#fff;
 	font-size:16px;
-	text-transform:uppercase;
 	margin-top:5px;
 	letter-spacing:2px
   }
@@ -225,24 +224,7 @@ footer {
 	color:#3366cc;
 	text-decoration:none;
   }
-  .footer-links.inline li
-  {
-	display:inline-block
-  }
-  .site-footer .social-icons
-  {
-	text-align:right
-  }
-  .site-footer .social-icons a
-  {
-	width:40px;
-	height:40px;
-	line-height:40px;
-	margin-left:6px;
-	margin-right:0;
-	border-radius:100%;
-	background-color:#33353d
-  }
+
   .copyright-text
   {
 	margin:0
