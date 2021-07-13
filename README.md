@@ -14,7 +14,9 @@ https://video-call-app-ms.herokuapp.com/c5e6cb83-7125-48e6-a53a-02d7cf5fe1aa
 APP WORKING
 
 Step 1: Click on the URL mentioned 
+
 Step 2: Send the same URL via any platform to your friends or colleagues.
+
 Step 3: Enjoy the chat and discuss some great ideas.
 
 
