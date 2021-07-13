@@ -1,7 +1,7 @@
 # Microsoft Engage 2021  
 
 
-(A great experience accompanied by great learning)
+*(A great experience accompanied by great learning)*
 
 The site link is mentioned below:
 
@@ -21,7 +21,7 @@ Step 2: Send the same URL via any platform to your friends or colleagues.
 Step 3: Enjoy the chat and discuss some great ideas.
 
 
-**EXTRA FEATURES** ***(To make app more convenient to use)***
+**EXTRA FEATURES** *(To make app more convenient to use)*
 
 1. Mute/Unmute
 2. Video on/off
