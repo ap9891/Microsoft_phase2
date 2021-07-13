@@ -29,10 +29,10 @@ Step 3: Enjoy the chat and discuss some great ideas.
 4. End Call
 5. Additional features 
 
-  i. Instructions pop up
+    i. Instructions pop up
   
-  ii. Video call benefits
+    ii. Video call benefits
   
-  iii. Why video call
+    iii. Why video call
 
 
