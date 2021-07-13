@@ -28,8 +28,11 @@ Step 3: Enjoy the chat and discuss some great ideas.
 3. Chat Box
 4. End Call
 5. Additional features 
+
   i. Instructions pop up
+  
   ii. Video call benefits
+  
   iii. Why video call
 
 
