@@ -27,4 +27,4 @@ EXTRA FEATURES (To make app more convenient to use)
   ii. Video call benefits
   iii. Why video call
 
-![](images/view_of_proj.png)
+![](images/view_of_proj.png) 
